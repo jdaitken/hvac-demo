@@ -1,0 +1,126 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import site from "../data/site.json";
+---
+
+<PageLayout
+  title="Contact Us"
+  description="Contact Superior HVAC Ottawa for heating and cooling service. Call us 24/7 for emergencies or request a free quote online."
+>
+  <!-- Hero -->
+  <section class="bg-brand-700 py-16">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-white sm:text-4xl">Contact Us</h1>
+      <p class="mt-4 text-lg text-brand-100">
+        Get in touch for a free estimate or schedule a service call.
+      </p>
+    </div>
+  </section>
+
+  <!-- Success message -->
+  <div
+    id="success-message"
+    class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-4 text-center font-medium"
+  >
+    Thank you! Your request has been submitted. We'll get back to you shortly.
+  </div>
+
+  <!-- Contact content -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-5">
+        <!-- Form -->
+        <div class="lg:col-span-3">
+          <h2 class="mb-2 text-2xl font-bold text-neutral-900">
+            Request a Service or Quote
+          </h2>
+          <p class="mb-8 text-neutral-600">
+            Fill out the form below and we'll get back to you within one business day. For emergencies, please call us directly.
+          </p>
+          <ContactForm />
+        </div>
+
+        <!-- Contact info sidebar -->
+        <div class="lg:col-span-2">
+          <div class="space-y-8">
+            <!-- Emergency callout -->
+            <div class="rounded-xl bg-accent-50 border border-accent-200 p-6">
+              <h3 class="flex items-center gap-2 text-lg font-bold text-accent-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                24/7 Emergency Service
+              </h3>
+              <p class="mt-2 text-neutral-700">
+                Heating emergency? Don't wait — call us now for immediate assistance.
+              </p>
+              <a
+                href={`tel:${site.phoneRaw}`}
+                class="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent-500 px-5 py-3 font-semibold text-white hover:bg-accent-600 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
+                {site.phone}
+              </a>
+            </div>
+
+            <!-- Contact details -->
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">Phone</h3>
+                <a href={`tel:${site.phoneRaw}`} class="mt-1 block text-lg text-neutral-900 hover:text-brand-500 transition-colors">
+                  {site.phone}
+                </a>
+              </div>
+
+              <div>
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">Email</h3>
+                <a href={`mailto:${site.email}`} class="mt-1 block text-lg text-neutral-900 hover:text-brand-500 transition-colors">
+                  {site.email}
+                </a>
+              </div>
+
+              <div>
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">Office Address</h3>
+                <p class="mt-1 text-lg text-neutral-900">
+                  {site.address.street}<br />
+                  {site.address.city}, {site.address.province} {site.address.postal}
+                </p>
+              </div>
+
+              <div>
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">Business Hours</h3>
+                <div class="mt-1 space-y-1 text-neutral-700">
+                  <p>{site.hours.regular}</p>
+                  <p>{site.hours.saturday}</p>
+                  <p>{site.hours.sunday}</p>
+                  <p class="font-semibold text-accent-600">{site.hours.emergency}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service area -->
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-neutral-400">Service Area</h3>
+              <p class="mt-2 text-neutral-700">
+                We serve {site.serviceAreas.slice(0, -1).join(", ")}, and {site.serviceAreas[site.serviceAreas.length - 1]}.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script>
+  if (window.location.search.includes("submitted=true")) {
+    const msg = document.getElementById("success-message");
+    const form = document.getElementById("contact-form");
+    if (msg) msg.classList.remove("hidden");
+    if (form) form.classList.add("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>

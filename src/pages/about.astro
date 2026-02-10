@@ -1,0 +1,158 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import CertificationBadge from "../components/CertificationBadge.astro";
+import CTABanner from "../components/CTABanner.astro";
+import site from "../data/site.json";
+
+const yearsInBusiness = new Date().getFullYear() - site.yearEstablished;
+---
+
+<PageLayout
+  title="About Us"
+  description="Learn about Superior HVAC Ottawa — a family-owned HVAC company serving Ottawa and surrounding areas with trusted heating and cooling services."
+>
+  <!-- Hero -->
+  <section class="bg-brand-700 py-16">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-white sm:text-4xl">About Superior HVAC</h1>
+      <p class="mt-4 text-lg text-brand-100">
+        Family-owned. Community-focused. Trusted by Ottawa homeowners since {site.yearEstablished}.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our story -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <SectionHeading align="left">Our Story</SectionHeading>
+          <div class="space-y-4 text-neutral-700">
+            <p>
+              Superior HVAC was founded in {site.yearEstablished} with a simple mission: provide
+              Ottawa families with honest, reliable heating and cooling services at fair prices.
+              What started as a two-person operation has grown into one of Ottawa's most
+              trusted HVAC companies.
+            </p>
+            <p>
+              Over the past {yearsInBusiness} years, we've built our reputation one service call at
+              a time. We believe that every homeowner deserves a warm home in winter and a cool
+              home in summer — without the runaround or hidden fees that plague our industry.
+            </p>
+            <p>
+              As a family-owned business, we treat every customer's home like our own. Our
+              technicians are fully licensed, background-checked, and trained to explain your
+              options clearly so you can make informed decisions about your comfort system.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=450&fit=crop"
+            alt="HVAC technician at work"
+            class="rounded-xl shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="bg-neutral-50 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading subtitle="The people behind your comfort.">
+        Meet Our Team
+      </SectionHeading>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: "Mike Thompson", role: "Owner & Lead Technician", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face" },
+          { name: "Lisa Thompson", role: "Operations Manager", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face" },
+          { name: "James Wilson", role: "Senior Technician", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" },
+          { name: "Priya Sharma", role: "Service Coordinator", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face" },
+        ].map((member) => (
+          <div class="text-center">
+            <img
+              src={member.img}
+              alt={member.name}
+              class="mx-auto h-40 w-40 rounded-full object-cover shadow-md"
+              loading="lazy"
+            />
+            <h3 class="mt-4 text-lg font-semibold text-neutral-900">{member.name}</h3>
+            <p class="text-neutral-600">{member.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading subtitle="Your assurance of quality, safety, and professionalism.">
+        Certifications & Licenses
+      </SectionHeading>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <CertificationBadge
+          title="TSSA Licensed"
+          description="Technical Standards and Safety Authority certified for gas work in Ontario."
+        />
+        <CertificationBadge
+          title="Fully Insured"
+          description="Comprehensive liability insurance and WSIB coverage for your protection."
+        />
+        <CertificationBadge
+          title="Lennox Dealer"
+          description="Authorized dealer for Lennox heating and cooling systems."
+        />
+        <CertificationBadge
+          title="BBB Accredited"
+          description="Better Business Bureau accredited with an A+ rating."
+        />
+        <CertificationBadge
+          title="G2 Gas Fitter Licensed"
+          description="Provincially licensed gas fitters for safe, code-compliant installations."
+        />
+        <CertificationBadge
+          title="313A Certified"
+          description="Ontario certified Refrigeration and Air Conditioning Systems Mechanics."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="bg-neutral-50 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading subtitle="Here's what sets us apart from other Ottawa HVAC companies.">
+        Why Choose Superior HVAC
+      </SectionHeading>
+      <div class="grid gap-8 md:grid-cols-2">
+        {[
+          { title: "Upfront, Honest Pricing", desc: "We provide written quotes before any work begins. No surprises, no hidden fees." },
+          { title: "24/7 Emergency Response", desc: "Ottawa winters don't wait, and neither do we. Emergency service available around the clock." },
+          { title: "Licensed & Experienced", desc: `Over ${yearsInBusiness} years of hands-on experience with TSSA-licensed technicians you can trust.` },
+          { title: "Local & Family-Owned", desc: "We live in Ottawa too. Your neighbors are our neighbors, and your community is ours." },
+          { title: "Guaranteed Satisfaction", desc: "We stand behind our work with a 100% satisfaction guarantee on all installations and repairs." },
+          { title: "Clean & Respectful Service", desc: "Boot covers, drop cloths, and a thorough cleanup. We treat your home with care." },
+        ].map((item) => (
+          <div class="flex items-start gap-4">
+            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-900">{item.title}</h3>
+              <p class="mt-1 text-neutral-600">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABanner heading="Ready to Work With Ottawa's Best?" text="Contact Superior HVAC today for honest, reliable service you can count on." />
+</PageLayout>

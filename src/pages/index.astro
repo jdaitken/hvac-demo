@@ -1,0 +1,147 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import Button from "../components/Button.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import CTABanner from "../components/CTABanner.astro";
+import site from "../data/site.json";
+---
+
+<PageLayout>
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-brand-700 via-brand-600 to-brand-800 py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="mb-4 inline-block rounded-full bg-accent-500/20 px-4 py-1 text-sm font-semibold text-accent-300">
+          {site.hours.emergency}
+        </p>
+        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Ottawa's Trusted <span class="text-accent-400">Heating & Cooling</span> Experts
+        </h1>
+        <p class="mt-6 text-lg text-brand-100 sm:text-xl">
+          From emergency furnace repairs to full AC installations, Superior HVAC
+          keeps Ottawa homes comfortable year-round. Fast response, honest pricing,
+          guaranteed satisfaction.
+        </p>
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+          <Button variant="accent" href={`tel:${site.phoneRaw}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            Emergency: {site.phone}
+          </Button>
+          <Button variant="white" href="/contact">Get a Free Quote</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading subtitle="Comprehensive HVAC solutions for homes and businesses across Ottawa.">
+        Our Services
+      </SectionHeading>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ServiceCard
+          title="Furnace Services"
+          description="Installation, repair, and maintenance for all furnace brands. Stay warm through Ottawa's coldest winters."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" /></svg>'
+        />
+        <ServiceCard
+          title="Air Conditioning"
+          description="Beat Ottawa summers with expert AC installation, repairs, and seasonal tune-ups."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>'
+        />
+        <ServiceCard
+          title="Maintenance Plans"
+          description="Preventative maintenance that extends equipment life and prevents costly breakdowns."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>'
+        />
+        <ServiceCard
+          title="24/7 Emergency"
+          description="Furnace died at midnight? We're here. Fast emergency response anywhere in Ottawa."
+          icon='<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
+        />
+      </div>
+      <div class="mt-10 text-center">
+        <Button href="/services" variant="outline">View All Services</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust signals -->
+  <section class="bg-neutral-50 py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 text-center sm:grid-cols-3">
+        <div>
+          <p class="text-4xl font-extrabold text-brand-500">{new Date().getFullYear() - site.yearEstablished}+</p>
+          <p class="mt-2 text-lg font-medium text-neutral-700">Years Serving Ottawa</p>
+        </div>
+        <div>
+          <p class="text-4xl font-extrabold text-brand-500">4.9</p>
+          <div class="mt-1 flex justify-center gap-1 text-accent-500">
+            {Array.from({ length: 5 }).map(() => (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <p class="mt-1 text-lg font-medium text-neutral-700">Google Rating</p>
+        </div>
+        <div>
+          <p class="text-4xl font-extrabold text-brand-500">TSSA</p>
+          <p class="mt-2 text-lg font-medium text-neutral-700">Licensed & Insured</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service area -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading subtitle="We proudly serve homeowners and businesses across the Ottawa region.">
+        Serving All of Ottawa & Surrounding Areas
+      </SectionHeading>
+      <div class="flex flex-wrap justify-center gap-3">
+        {
+          site.serviceAreas.map((area) => (
+            <span class="rounded-full bg-brand-50 px-4 py-2 text-sm font-medium text-brand-700 border border-brand-100">
+              {area}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-neutral-50 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading subtitle="Don't just take our word for it — hear from Ottawa homeowners.">
+        What Our Customers Say
+      </SectionHeading>
+      <div class="grid gap-6 md:grid-cols-3">
+        <TestimonialCard
+          quote="Our furnace broke down on the coldest night of the year. Superior HVAC had a technician at our door within an hour. Absolutely lifesavers!"
+          author="Sarah Mitchell"
+          location="Kanata, Ottawa"
+        />
+        <TestimonialCard
+          quote="Professional, on time, and fair pricing. They installed our new AC system and it works perfectly. Highly recommend for any HVAC work."
+          author="David Chen"
+          location="Barrhaven, Ottawa"
+        />
+        <TestimonialCard
+          quote="We've been using Superior HVAC for maintenance on both our furnace and AC for three years. Always reliable and thorough. Great local company."
+          author="Marie Dubois"
+          location="Orleans, Ottawa"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABanner />
+</PageLayout>

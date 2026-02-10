@@ -1,0 +1,110 @@
+---
+import site from "../data/site.json";
+
+const currentYear = new Date().getFullYear();
+const yearsInBusiness = currentYear - site.yearEstablished;
+---
+
+<footer class="bg-neutral-900 text-neutral-300">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid gap-12 md:grid-cols-3">
+      <!-- Brand -->
+      <div>
+        <a href="/" class="text-xl font-bold text-white">
+          <span class="text-brand-400">Superior</span> HVAC
+        </a>
+        <p class="mt-4 text-neutral-400">
+          Serving Ottawa families and businesses with reliable heating and
+          cooling solutions for over {yearsInBusiness} years.
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-400">
+          Quick Links
+        </h3>
+        <ul class="space-y-3">
+          <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="/services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+          <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact info -->
+      <div>
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-400">
+          Contact Us
+        </h3>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href={`tel:${site.phoneRaw}`}
+              class="flex items-center gap-2 hover:text-white transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 shrink-0"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                ></path>
+              </svg>
+              {site.phone}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`mailto:${site.email}`}
+              class="flex items-center gap-2 hover:text-white transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 shrink-0"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                ></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                ></path>
+              </svg>
+              {site.email}
+            </a>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mt-0.5 h-4 w-4 shrink-0"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>
+              {site.address.street}<br />
+              {site.address.city}, {site.address.province} {site.address.postal}
+            </span>
+          </li>
+        </ul>
+        <div class="mt-4 space-y-1 text-sm text-neutral-500">
+          <p>{site.hours.regular}</p>
+          <p>{site.hours.saturday}</p>
+          <p>{site.hours.sunday}</p>
+          <p class="font-semibold text-accent-400">{site.hours.emergency}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-neutral-800 pt-8 text-center text-sm text-neutral-500">
+      <p>&copy; {currentYear} {site.name}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

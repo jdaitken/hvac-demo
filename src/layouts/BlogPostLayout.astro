@@ -1,0 +1,74 @@
+---
+import PageLayout from "./PageLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  heroImage?: string;
+}
+
+const { title, description, pubDate, heroImage } = Astro.props;
+const formattedDate = pubDate.toLocaleDateString("en-CA", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<PageLayout title={title} description={description}>
+  <article>
+    <!-- Hero -->
+    {
+      heroImage && (
+        <div class="bg-neutral-100">
+          <img
+            src={heroImage}
+            alt={title}
+            class="mx-auto max-h-96 w-full object-cover"
+          />
+        </div>
+      )
+    }
+
+    <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 text-sm text-neutral-500">
+        <a href="/" class="hover:text-brand-500 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/blog" class="hover:text-brand-500 transition-colors">Blog</a>
+        <span class="mx-2">/</span>
+        <span class="text-neutral-700">{title}</span>
+      </nav>
+
+      <!-- Header -->
+      <header class="mb-10">
+        <time class="text-sm text-neutral-500" datetime={pubDate.toISOString()}>
+          {formattedDate}
+        </time>
+        <h1 class="mt-2 text-3xl font-bold text-neutral-900 sm:text-4xl">
+          {title}
+        </h1>
+        <p class="mt-4 text-lg text-neutral-600">{description}</p>
+      </header>
+
+      <!-- Content -->
+      <div class="prose prose-lg prose-neutral max-w-none prose-headings:text-neutral-900 prose-a:text-brand-500 prose-a:no-underline hover:prose-a:underline">
+        <slot />
+      </div>
+
+      <!-- Back link -->
+      <div class="mt-12 border-t border-neutral-200 pt-8">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 font-medium text-brand-500 hover:text-brand-600 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Back to all articles
+        </a>
+      </div>
+    </div>
+  </article>
+</PageLayout>

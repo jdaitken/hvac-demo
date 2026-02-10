@@ -1,0 +1,114 @@
+---
+import site from "../data/site.json";
+
+const formAction = `https://formspree.io/f/${site.formspreeId}`;
+---
+
+<form
+  id="contact-form"
+  action={formAction}
+  method="POST"
+  class="space-y-6"
+>
+  <!-- Honeypot -->
+  <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+  <!-- Redirect back with success param -->
+  <input type="hidden" name="_next" value="/contact?submitted=true" />
+
+  <div class="grid gap-6 sm:grid-cols-2">
+    <div>
+      <label for="name" class="block text-sm font-medium text-neutral-700">
+        Full Name <span class="text-accent-500">*</span>
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="mt-1 block w-full rounded-lg border border-neutral-300 px-4 py-3 text-neutral-900 shadow-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"
+        placeholder="John Smith"
+      />
+    </div>
+    <div>
+      <label for="phone" class="block text-sm font-medium text-neutral-700">
+        Phone Number <span class="text-accent-500">*</span>
+      </label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        class="mt-1 block w-full rounded-lg border border-neutral-300 px-4 py-3 text-neutral-900 shadow-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"
+        placeholder="(613) 555-0000"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="email" class="block text-sm font-medium text-neutral-700">
+      Email Address
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="mt-1 block w-full rounded-lg border border-neutral-300 px-4 py-3 text-neutral-900 shadow-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"
+      placeholder="john@example.com"
+    />
+  </div>
+
+  <div>
+    <label for="service" class="block text-sm font-medium text-neutral-700">
+      Service Needed <span class="text-accent-500">*</span>
+    </label>
+    <select
+      id="service"
+      name="service"
+      required
+      class="mt-1 block w-full rounded-lg border border-neutral-300 px-4 py-3 text-neutral-900 shadow-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"
+    >
+      <option value="">Select a service...</option>
+      <option value="furnace-repair">Furnace Repair</option>
+      <option value="furnace-install">Furnace Installation</option>
+      <option value="ac-repair">AC Repair</option>
+      <option value="ac-install">AC Installation</option>
+      <option value="maintenance">Maintenance / Tune-Up</option>
+      <option value="heat-pump">Heat Pump Services</option>
+      <option value="emergency">Emergency Service</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="preferred-date" class="block text-sm font-medium text-neutral-700">
+      Preferred Date
+    </label>
+    <input
+      type="date"
+      id="preferred-date"
+      name="preferred_date"
+      class="mt-1 block w-full rounded-lg border border-neutral-300 px-4 py-3 text-neutral-900 shadow-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"
+    />
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-neutral-700">
+      Message
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      class="mt-1 block w-full rounded-lg border border-neutral-300 px-4 py-3 text-neutral-900 shadow-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 focus:outline-none"
+      placeholder="Tell us about your issue or what you need..."
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="w-full rounded-lg bg-accent-500 px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-accent-600 focus:ring-2 focus:ring-accent-500/20 focus:outline-none"
+  >
+    Request Service
+  </button>
+</form>

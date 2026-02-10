@@ -1,0 +1,37 @@
+{
+  "name": "Superior HVAC Ottawa",
+  "tagline": "Ottawa's Trusted Heating & Cooling Experts",
+  "phone": "(613) 555-0187",
+  "phoneRaw": "6135550187",
+  "email": "info@superiorhvacottawa.ca",
+  "address": {
+    "street": "1247 Clyde Avenue",
+    "city": "Ottawa",
+    "province": "ON",
+    "postal": "K2C 3H4"
+  },
+  "hours": {
+    "regular": "Mon-Fri: 7:00 AM - 6:00 PM",
+    "saturday": "Sat: 8:00 AM - 2:00 PM",
+    "sunday": "Sun: Closed",
+    "emergency": "24/7 Emergency Service Available"
+  },
+  "formspreeId": "xwpevvvj",
+  "yearEstablished": 2007,
+  "serviceAreas": [
+    "Ottawa",
+    "Kanata",
+    "Barrhaven",
+    "Orleans",
+    "Nepean",
+    "Gloucester",
+    "Stittsville",
+    "Manotick",
+    "Riverside South",
+    "Kemptville"
+  ],
+  "social": {
+    "google": "#",
+    "facebook": "#"
+  }
+}
