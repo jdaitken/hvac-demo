@@ -2,7 +2,7 @@
 title: "AC Maintenance Checklist for Ottawa Homeowners"
 description: "Keep your air conditioner running efficiently all summer with this simple maintenance checklist designed for Ottawa's climate."
 pubDate: 2025-05-20
-heroImage: "https://images.unsplash.com/photo-1631545806609-35d4ae440431?w=800&h=400&fit=crop"
+heroImage: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=400&fit=crop"
 tags: ["air conditioning", "maintenance", "summer"]
 ---
 
