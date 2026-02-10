@@ -3,7 +3,7 @@ set -e
 
 # ========= CHANGE THESE TWO LINES PER PROJECT =========
 SITE_NAME="hvac-demo"
-DEST="u3102-burdgwn019k2@jdaitken.ca:~/www/johna440.sg-host.com/public_html/"
+DEST="u3102-burdgyn0i9k2@ssh.johna440.sg-host.com:~/www/johna440.sg-host.com/public_html/"
 # =====================================================
 
 echo "🚀 Deploying $SITE_NAME..."
