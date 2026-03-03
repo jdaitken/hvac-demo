@@ -84,6 +84,6 @@ Ottawa's HVAC needs are unique. Our winters are among the coldest of any major C
 
 ## Our Commitment
 
-At Northern Elements HVAC, we check every box on this list — and then some. We're TSSA-licensed, fully insured, and have been serving Ottawa homeowners since 2007. We provide detailed written quotes, pull all necessary permits, and stand behind our work with a satisfaction guarantee.
+At Superior HVAC, we check every box on this list — and then some. We're TSSA-licensed, fully insured, and have been serving Ottawa homeowners since 2007. We provide detailed written quotes, pull all necessary permits, and stand behind our work with a satisfaction guarantee.
 
 [Get a free quote](/contact) and see the difference a trusted local contractor makes.
