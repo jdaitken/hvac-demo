@@ -2,29 +2,29 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Brand blues */
+  /* Brand blues — water/cooling */
   --color-brand-50: #eff6ff;
   --color-brand-100: #dbeafe;
   --color-brand-200: #bfdbfe;
   --color-brand-300: #93c5fd;
   --color-brand-400: #60a5fa;
-  --color-brand-500: #1e56a0;
-  --color-brand-600: #1a4b8c;
-  --color-brand-700: #153d73;
-  --color-brand-800: #0f2d59;
-  --color-brand-900: #0a1f40;
+  --color-brand-500: #2B74B8;
+  --color-brand-600: #245f96;
+  --color-brand-700: #1d4b77;
+  --color-brand-800: #163859;
+  --color-brand-900: #0f263d;
 
-  /* Accent orange */
+  /* Accent orange-red — fire/heating */
   --color-accent-50: #fff7ed;
   --color-accent-100: #ffedd5;
   --color-accent-200: #fed7aa;
   --color-accent-300: #fdba74;
   --color-accent-400: #fb923c;
-  --color-accent-500: #e8700a;
-  --color-accent-600: #d45e08;
-  --color-accent-700: #b04a06;
-  --color-accent-800: #8c3a05;
-  --color-accent-900: #6b2d04;
+  --color-accent-500: #D94F1A;
+  --color-accent-600: #b83f14;
+  --color-accent-700: #96320f;
+  --color-accent-800: #752609;
+  --color-accent-900: #5a1d07;
 
   /* Neutral grays */
   --color-neutral-50: #f8fafc;
